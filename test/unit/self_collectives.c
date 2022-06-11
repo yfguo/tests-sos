@@ -166,7 +166,7 @@ int main(void) {
     CHECK("shmem_int_and_to_all", in, out);
 #else
     if (new_team != SHMEM_TEAM_INVALID)
-        shmem_int_and_reduce(new_team, &in, &out, 1);
+        shmem_uint_and_reduce(new_team, &in, &out, 1);
     CHECK("shmem_int_and_reduce", in, out);
 #endif
     shmem_barrier_all();
@@ -177,7 +177,7 @@ int main(void) {
     CHECK("shmem_int_or_to_all", in, out);
 #else
     if (new_team != SHMEM_TEAM_INVALID)
-        shmem_int_or_reduce(new_team, &in, &out, 1);
+        shmem_uint_or_reduce(new_team, &in, &out, 1);
     CHECK("shmem_int_or_reduce", in, out);
 #endif
     shmem_barrier_all();
@@ -188,7 +188,7 @@ int main(void) {
     CHECK("shmem_int_xor_to_all", in, out);
 #else
     if (new_team != SHMEM_TEAM_INVALID)
-        shmem_int_xor_reduce(new_team, &in, &out, 1);
+        shmem_uint_xor_reduce(new_team, &in, &out, 1);
     CHECK("shmem_int_xor_reduce", in, out);
 #endif
     shmem_barrier_all();
